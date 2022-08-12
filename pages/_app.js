@@ -1,6 +1,6 @@
 //import '../styles/globals.css'
 import '../styles/auth.css'
-// import '../styles/mystyle.css'
+import '../styles/menumainpage.css'
 // import '../styles/pagestyle.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 

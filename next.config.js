@@ -8,6 +8,7 @@ const nextConfig = {
         source: '/register', // mau diganti jadi apa ?
         destination: '/auth/register', // path lama ?
       },
+      
     ]
   },
   async redirects() {

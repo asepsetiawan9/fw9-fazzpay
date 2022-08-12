@@ -8,7 +8,7 @@ import * as Yup from 'yup'
 import Head from 'next/head';
 import { useDispatch, useSelector } from 'react-redux';
 import phonelogin from '../../public/images/phonelogin.png';
-import register from "../redux/asyncActions/auth";
+import login from '../../stores/actions/auth';
 import Router from 'next/router';
 
 
@@ -19,15 +19,14 @@ const signupSchema = Yup.object().shape({
 })
 
 const SignUpForm = (props) => {
-  const navigate = useNavigate();
   const successMsg = useSelector((state) => state.auth.successMsg);
   const errorMsg = useSelector((state) => state.auth.errorMsg);
 
-  React.useEffect(() => {
-    if (successMsg) {
-      navigate("/login", { state: { successMsg } });
-    }
-  }, [navigate, successMsg]);
+  // React.useEffect(() => {
+  //   if (successMsg) {
+  //     navigate("/login", { state: { successMsg } });
+  //   }
+  // }, [navigate, successMsg]);
 
   const style = { color: "#1A374D", fontSize: "1.5em" }
   return (
@@ -61,7 +60,7 @@ const SignUpForm = (props) => {
         </div>
         <div className="text-center">
           Already have an account? Lets
-          <Link style={{ textDecoration: 'none', color: '#406882' }} to={"/login/"}> Login</Link>
+          <Link style={{ textDecoration: 'none', color: '#406882' }} href={"/auth/signin/"}> Login</Link>
 
         </div>
       </Form>
@@ -73,7 +72,7 @@ function Signup() {
   const style = { color: "#1A374D", fontSize: "1.5em" }
   const dispatch = useDispatch();
   const token = useSelector((state) => state.auth.token);
-  const navigate = useNavigate();
+
 
   const onRegister = (value) => {
     dispatch(register(value));
@@ -81,9 +80,9 @@ function Signup() {
 
   React.useEffect(() => {
     if (token) {
-      navigate("/dashboard");
+      Router.push('/home');
     }
-  }, [navigate, token]);
+  }, [token]);
 
   return (
     <>

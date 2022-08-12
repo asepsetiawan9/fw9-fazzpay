@@ -54,7 +54,7 @@ const LoginForm = ({ errors, handleSubmit, handleChange }) => {
                 </Form.Group>
 
                 <div className="text-end" style={{ marginTop: '-10px', marginBottom: '10px', textDecoration: 'none', color: '#406882' }}>
-                    <Link href={"/forgot/"}>Forgot Password?</Link>
+                    <Link href={"/auth/passforgot"}>Forgot Password?</Link>
                 </div>
 
                 <div className="d-grid ">
@@ -62,7 +62,7 @@ const LoginForm = ({ errors, handleSubmit, handleChange }) => {
                 </div>
                 <div className="text-center" style={{ marginTop: '10px' }}>
                     Dont have an account? Lets
-                    <Link style={{ textDecoration: 'none', color: '#406882' }} href={"/signup/"}> Sign Up</Link>
+                    <Link style={{ textDecoration: 'none', color: '#406882' }} href={"/auth/Signup/"}> Sign Up</Link>
 
                 </div>
             </Form>
@@ -96,7 +96,7 @@ const Signin = () => {
                     <div className='parent'>
                         <Navbar>
                             <div className='titleapp' >
-                                <Link href='/reset-password'>ART-TOS</Link>
+                                <Link href='/auth/Sigin'>ART-TOS</Link>
                             </div>
                         </Navbar>
                         <div className="d-flex flex-column align-items-center">
@@ -117,7 +117,7 @@ const Signin = () => {
                 <Col md={5} style={{ padding: '0px', background: '#B1D0E0' }}>
                     <div className='form-login1 '>
                         <div className='secTitle'>
-                            <Link href="/login/">ART-TOS</Link>
+                            <Link href="/auth/signin">ART-TOS</Link>
                         </div>
                         <h3>Start Accessing Banking Needs
                             With All Devices and All Platforms
