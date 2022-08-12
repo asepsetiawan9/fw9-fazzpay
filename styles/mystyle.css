@@ -1,0 +1,509 @@
+body{
+    color: #B1D0E0;
+    background-color: #1A374D;
+    font-family: 'Nunito Sans', sans-serif;
+    padding: 0;
+    margin: 0;
+    }
+    .parent{
+
+        padding-bottom: 30px;
+        background: url("../public/images/bg.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+   
+    
+    /* // Medium devices (tablets, 768px and up) */
+    @media (max-width: 768px) {
+        header{
+
+        }
+        .titleapp{
+            font-size: 29px; 
+            color:#B1D0E0; 
+            font-weight: bold;
+        }
+        .imgtry{
+            background: unset;
+            text-align: center;
+        }
+        br{
+            display: unset;
+            display: none;
+        }
+        nav{
+            display: flex;
+            flex-direction: column;
+            padding: 30px;
+            margin: 0px;
+            justify-content: center;
+            text-align: center;
+        }
+        .fw9-sec-btn{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 20px;
+            gap: 15px;
+        }
+        .fw9-sec-btn .login{
+            box-sizing: border-box; 
+            background: #1A374D;
+            border: 2px solid #FFFFFF;
+            border-radius: 12px; 
+            font-size: 16px; 
+            padding: 10px 36px; 
+            color: #FFFFFF;
+            text-decoration: none;
+    
+        }
+        
+        .fw9-sec-btn .regis{
+            box-sizing: border-box; background: #FFFFFF; border: 2px solid #1A374D;
+            border-radius: 12px; font-size: 16px; padding: 10px 26px; color: #1A374D;
+            text-decoration: none;
+        }
+        .fw9-btn{
+            display: none;
+        }
+        .bgbg img{
+            width: 80%;
+            align-items: center;
+        }
+    
+        .main1{
+            display: flex;
+            flex-direction: column;
+            padding: 30px 0px;
+    
+        }
+    
+        .maintry{
+            display: flex;
+            justify-content: center;
+            padding: 0px 30px;
+            margin: 0px;
+    
+        }
+        .maintry1{
+            max-width: 402px;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .maintry1 h1{
+            font-weight: 800; font-size: 50px;
+        }
+         .main1 .imgtry .bg-bg{
+            background: unset;
+            background-image: unset;
+        }
+        .btntry{
+            box-sizing: border-box; 
+            background: #1A374D; 
+            border: 2px solid #FFFFFF;;
+            border-radius: 12px; 
+            font-size: 16px; 
+            padding: 10px 26px; 
+            color: #FFFFFF;
+            text-decoration: none;
+            }
+            .abouttitle{
+            margin-bottom: 30px; 
+            font-weight: 800; 
+            font-size: 60px;
+        }
+        .abouttitle{
+            margin-bottom: 30px; 
+            font-weight: 800; 
+            font-size: 60px;
+        }
+
+        .about{
+            background-color: #406882;
+            text-align: center; 
+            padding: 30px;
+            }
+         
+        .blokabout{
+    
+            display: flex;
+            flex-direction: column;
+            padding: 30px;
+            margin: 0px;
+            justify-content: center;
+            align-items: center;
+        }
+        .blok1{
+            border-radius: 25px;
+            background-color: #1A374D;
+            max-width: 384px;
+            max-height: 384px;
+            text-align: center;
+            padding-top: 50px;
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+        
+    
+        .sponsor{
+            display: flex;
+            flex-direction: column;
+            padding: 30px;
+            margin: 0px;
+            justify-content: center;
+            text-align: center;
+            text-align: center;
+        }
+        .sponsor img{
+            align-items: center;
+            width: 100%;
+            padding: 30px;
+            margin: 0px;
+            margin-left: 0px!important;
+        }
+        .sponsor h1{
+            font-weight: 800; font-size: 60px;
+            }
+            .sponsor p{
+            font-weight: 400; font-size: 18px; 
+            }
+            .feature{
+                background-color: #406882
+            }
+
+        .feature1 br{
+            display: none;
+        }
+        .feature1{
+            
+            display: flex;
+            flex-direction: column;
+            padding: 30px;
+            margin: 0px;
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+        }
+        .imgfeature{
+            width: 80%;
+        }
+        .testiuser{
+            display: flex;
+            flex-direction: column;
+            padding: 30px;
+            margin: 0px;
+            justify-content: center;
+            text-align: center;
+            text-align: center;
+            gap: 15px;
+        }
+    
+        .featfeat h1{
+            padding-bottom: 30px;
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+            font-size: 50px;
+            font-weight: bold;
+        }
+        .blockfeat{
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-left: 20px;
+            background-color: #1A374D;
+            text-align: left;
+            border-radius: 25px;
+            margin-bottom: 30px;
+            }
+            .testi{
+                background-color: #1A374D;
+                text-align: center;
+                padding: 30px;
+                margin-bottom: 80px;
+        
+                }
+                .testi h1{
+                margin-bottom: 30px;
+                font-weight: bold;
+                font-size: 50px;
+                }
+                .testiuser{
+                display: flex;
+                flex-direction: column;
+                padding: 30px;
+                margin: 0px;
+                justify-content: center;
+                text-align: center;
+                text-align: center;
+                }
+        
+                .block11{ 
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                padding: 30px;
+                height: 304px;
+                width: 307px;
+                background-color: #406882;
+                border-radius: 25px;
+                box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+                }
+                footer{
+                    background-color: #406882;
+                   
+                   
+                    padding: 30px;
+                    
+                    }
+                    footer p{
+                        display: none;
+                    }
+                    footer h1{
+                        text-align: center;
+                    }
+                    .landingHeader{
+                        display: none;
+                    }
+     }
+    
+     @media (min-width: 769px) {
+        .landingHeader{
+            padding: 30px;
+            margin-top: -50px;
+            margin-bottom: 0px;
+            max-width: 100;
+            background: #B1D0E0;
+        }
+        nav{
+        display: flex; 
+        justify-content:space-between; 
+        margin-top: 50px;
+        margin-left: 150px; 
+        margin-right: 150px;
+        }
+        .titleapp{
+        font-size: 29px; 
+        color:#B1D0E0; 
+        font-weight: bold;
+        }
+        .bgbg{
+        align-items: center;
+        background-repeat: no-repeat; 
+        background-image : url("../public/images/imgbg.png");
+        }
+        .bgbg img{
+        margin-top: 75px;  margin-right: 150px;
+        }
+        .fw9-btn1{
+        display: flex;
+        }
+        .fw9-btn1 .login{
+        box-sizing: border-box; 
+        background: #1A374D;
+        border: 2px solid #B1D0E0;
+        border-radius: 12px; 
+        font-size: 16px; 
+        padding: 10px 36px; 
+        color: #B1D0E0;
+        text-decoration: none;
+        }
+
+        .fw9-btn1 .regis{
+        box-sizing: border-box; 
+        background: #B1D0E0;
+        border: 2px solid #1A374D; 
+        border-radius: 12px; 
+        font-size: 16px; 
+        padding: 10px 30px; 
+        text-align: center; 
+        color: #1A374D;
+        text-decoration: none;
+        }
+
+        .fw9-sec-btn{
+        display: none;
+        }
+        .main1{
+        display: flex; 
+        justify-content: space-between; 
+        width:100%; 
+        position:absolute; 
+        z-index: -1; top:0; 
+        }
+        .maintry{
+        flex:1; margin-top: 80px; margin-left: 150px;
+        }
+        .maintry1{
+        max-width: 402px; 
+        margin-top: 100px;
+       
+        }
+        .maintry1 h1{
+        font-weight: 800; font-size: 50px;
+        }
+        .btntry{
+        box-sizing: border-box; 
+        background: #1A374D; 
+        border: 2px solid #B1D0E0;;
+        border-radius: 12px; 
+        font-size: 16px; 
+        padding: 10px 26px; 
+        color: #B1D0E0;
+        text-decoration: none;
+        }
+        .imgtry{
+        flex:1;  
+        background-size:contain;  
+        min-height: 440px; 
+        background-position-x: right; 
+        text-align: right; 
+
+        }
+        .abouttitle{
+        margin-bottom: 30px; 
+        font-weight: 800; 
+        font-size: 60px;
+        }
+
+        .about{
+        background-color: #406882;
+        text-align: center; margin-top: 700px;
+        }
+        .aboutmargin{
+        margin-top: 750px;
+        margin-left: 150px;
+        margin-right: 150px;
+        padding-top: 50px;
+        padding-bottom: 50px;
+
+        }
+
+        .aboutdecs{
+        margin-bottom: 70px; font-weight: 400; font-size: 18px;
+        }
+        .blokabout{
+        display: flex;
+        justify-content: center;
+
+        }
+
+        .blockabout h1{
+        margin-bottom: 35px; font-weight: bold; font-size: 14px;
+        }
+        .blockabout p{
+        font-weight: 300; font-size: 18px;
+        }
+
+        .blok1{
+        border-radius: 25px;
+        background-color: #1A374D;
+        max-width: 384px;
+        max-height: 384px;
+        text-align: center;
+        padding-top: 50px;
+        padding-left: 30px;
+        padding-right: 30px;
+
+        }
+
+        .sponsor{
+        padding-top: 100px;
+        margin-left: 150px;
+        margin-right: 150px;
+        margin-bottom: 100px;
+
+        display: flex;
+        justify-content: center;
+
+        }
+        .sponsor h1{
+        font-weight: 800; font-size: 60px;
+        }
+        .sponsor p{
+        font-weight: 400; font-size: 18px; 
+        }
+
+        .feature{
+        background-color: #406882
+        }
+        .feature1{
+        padding-top: 90px;
+        margin-right: 150px;
+        margin-left: 150px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        }
+
+        .blockfeat{
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 20px;
+        background-color: #1A374D;
+        text-align: left;
+        border-radius: 25px;
+        margin-bottom: 30px;
+        }
+
+        .testi{
+        background-color: #1A374D;
+        text-align: center;
+        padding-top: 50px;
+        margin-left: 150px;
+        margin-right: 150px;
+        margin-bottom: 80px;
+
+        }
+        .testi h1{
+        margin-bottom: 30px;
+        font-weight: bold;
+        font-size: 70px;
+        }
+        .testiuser{
+        display: flex;
+        flex-direction: row;
+        padding: 30px;
+        margin: 0px;
+        justify-content: center;
+        text-align: center;
+        text-align: center;
+        }
+
+        .block11{ 
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 30px;
+        height: 344px;
+        width: 367px;
+        background-color: #406882;
+        border-radius: 25px;
+        box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+        }
+        .block11 img{
+        width: 60px;;
+        }
+        .featfeat h1{
+            font-weight: bold;
+            font-size: 50px;
+        }
+        footer{
+        background-color: #406882;
+
+        padding-left: 150px;
+        padding-right: 150px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        }
+
+     }
+    

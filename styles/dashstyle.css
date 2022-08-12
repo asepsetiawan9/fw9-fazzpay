@@ -1,0 +1,459 @@
+body{
+    font-family: 'Nunito Sans', sans-serif;
+    background-color: #1A374D;
+    
+    }
+header{
+
+    margin-top: -50px;
+    margin-right: 15px;
+    padding: 0px;
+    background-color: #B1D0E0;
+    border-bottom-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+}
+.headerDashboard{
+  margin-top: -50px;
+  padding-top: 30px;
+  background: #B1D0E0;
+}
+.Navbar{
+    color: #1A374D;
+    display: flex; 
+    justify-content:space-between; 
+    /* padding-top: 50px; */
+    background-color: #B1D0E0;
+    
+    }
+.navWrap{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center; 
+    text-align: center; 
+    align-items: center;
+}
+.dashUser{
+    justify-content: center; 
+    text-align:center; 
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+.userDashName{
+    font-size: 18px; 
+    color: #1A374D;; 
+    font-weight: bold;
+}
+.home{
+    font-size: 29px; 
+    color:#1A374D; 
+    font-weight: bold; 
+    text-decoration: none;
+}
+.titleapp:hover{
+    font-size: 29px; 
+    color:#1A374D; 
+    font-weight: bold;
+  }
+  .titleapp{
+    padding-left: 100px;
+    font-size: 29px; 
+    color:#1A374D; 
+    font-weight: bold;
+    text-decoration: none;
+  }
+
+  .notifDropdown{
+    display: flex;
+    flex-direction: column;
+    background-color: #B1D0E0;
+    border-radius: 25px; 
+    justify-content: center; 
+    width: 300px; 
+    padding: 30px;
+    border: 2px solid #FFFFFF;
+  }
+
+  .btn-primary {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: #1A374D;
+    --bs-btn-border-color: #1A374D;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #1A374D;
+    --bs-btn-hover-border-color: #1A374D;
+    --bs-btn-focus-shadow-rgb: 49,132,253;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #1A374D;
+    --bs-btn-active-border-color: #1A374D;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: #1A374D;
+    --bs-btn-disabled-border-color: #1A374D;
+}
+.dropdown-menu{
+  --bs-dropdown-link-hover-bg: #1A374D;
+  --bs-dropdown-link-hover-color: #B1D0E0;
+  
+}
+.dropDownMenuMobile{
+  display: none!important;
+}
+.menuDropDown{
+    display: flex;
+    flex-direction: column;
+    background-color: #B1D0E0;
+    border-radius: 25px; 
+    justify-content: center; 
+    padding: 20px;
+    border: 2px solid #FFFFFF;
+}
+
+  .notifDay{
+    font-size: 17px; 
+    font-weight: bold; 
+    color: #7A7886;
+  }
+  .dropdownIcon{
+    background: unset;
+    border: unset;
+    box-shadow: unset;
+    color: #1A374D;
+    border-radius: unset;
+  }
+  .dropdownIcon:hover{
+    background: unset;
+    border: unset;
+    box-shadow: unset;
+    color: #1A374D;
+    border-radius: unset;
+  }
+  .dropdownIcon:active{
+    background: unset;
+    border: unset;
+    box-shadow: unset;
+    color: #1A374D;
+    border-radius: unset;
+  }
+  /* .custom_nav_link{
+    align-self: flex-start!important;  
+    text-align: start !important;
+    background: unset!important;
+    background: none!important;
+  } */
+
+  .dropdown-menu[data-bs-popper]{
+    left: -100px;
+  }
+  .dropdown-menu.show {
+    background: none;
+    border: none;
+  }
+
+  .sideBar{
+    
+    display: flex;
+    flex-direction: column;
+    background: #B1D0E0;
+    border-radius: 25px;
+    justify-content: space-between;
+    align-items: right;
+    text-align: right;
+    color: #1A374D;
+  }
+  .sideBarMenu{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+  .itemMenu{
+    padding: 30px 30px 0px 30px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    gap: 30px;
+    justify-content: center;
+  }
+  .mainWraper{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px;
+    
+}
+  .mainDashboard{  
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; 
+    padding: 40px 30px;
+    color: #1A374D;
+    
+}
+  .mainDashboardImg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center; 
+    padding-bottom: 30px;    
+    
+}
+.mainDashTf{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+
+.tfDash{
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  color: #fff;
+}
+
+.fw9-btn{
+  box-sizing: border-box; 
+  background: #1A374D; 
+  border: 2px solid #FFFFFF;
+  border-radius: 12px; 
+  font-size: 18px; 
+  padding: 10px 36px; 
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+.taransHistory{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: #B1D0E0;
+  border-radius: 25px;
+  padding: 30px;
+}
+.transhistorydahsboard{
+  color: #1A374D;
+  padding: 30px
+}
+
+footer{
+  background: #B1D0E0;
+  color: #1A374D;
+}
+.regis{
+  box-sizing: border-box; 
+  background: #1A374D; 
+  border: 2px solid #fff;
+  border-radius: 12px; 
+  font-size: 16px; 
+  padding: 10px 26px; 
+  color: #B1D0E0;
+  text-decoration: none;
+}
+.regis:hover{
+  box-sizing: border-box; 
+  background: #6998AB; 
+  border: 2px solid #1A374D;
+  border-radius: 12px; 
+  font-size: 16px; 
+  padding: 10px 26px; 
+  color: #1A374D;
+  text-decoration: none;
+}
+.login{
+  box-sizing: border-box; 
+  background: #B1D0E0; 
+  border: 2px solid #1A374D;
+  border-radius: 12px; 
+  font-size: 16px; 
+  padding: 10px 26px; 
+  color: #1A374D;
+  text-decoration: none;
+}
+.login:hover{
+  box-sizing: border-box; 
+  background: #6998AB; 
+  border: 2px solid #1A374D;
+  border-radius: 12px; 
+  font-size: 16px; 
+  padding: 10px 26px; 
+  color: #1A374D;
+  text-decoration: none;
+}
+.transHisWrapp{
+  padding:30px 150px; 
+  background-color: #E5E5E5;
+}
+.wrapTrasn{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-left: 30px;
+  gap: 15px;
+  padding-right: 30px;
+  margin-bottom: 20px;
+}
+
+.cardHistory{
+  display: flex;
+  flex-direction: row;
+  padding-top: 10px;
+}
+
+.cardSearchTrans{
+  padding-right: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  text-decoration: none;
+  color: #1A374D;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+}
+.inputAmount{
+  display: flex;
+  flex-direction: column;
+  gap:10px;
+  justify-content: center;
+  align-items: center;
+}
+.modalPinWrap{
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: center;
+}
+.modalPinFormWrap{
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  border: 1px solid gray;
+  padding: 10px;
+}
+.modalPinForm{
+  width: 30px; 
+  height: 50px; 
+  border: unset; 
+  border-bottom: 1px solid gray; 
+  font-size: 20px; 
+  text-align: center;
+}
+
+.cardProfile{
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  padding: 20px 30px 1px 20px;
+  justify-content: space-between;
+  margin: 0px 170px;
+  background: #6998AB;
+  border-radius: 10px;
+}
+.fw9BtnChange{
+  margin: 0px 150px;
+}
+.addPhone{
+  padding: 0px 150px;
+}
+.passChange{
+  margin: 0px 180px;
+}
+.react-bs-container-body tr {
+  border-top-style: hidden !important;
+}
+
+.react-bs-container-header tr {
+  border-bottom-style: hidden !important;
+}
+  @media (max-width: 768px) {
+    .sideBar{
+      display: none;
+    } 
+    .dropDownMenuMobile{
+      display: block!important;
+    }
+    .headerDashboard{
+      padding: 0;
+      margin: 0;
+    }
+    .mainDashTf{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+    }
+    .mainDashTfWrap{
+      margin-top: 10px;
+      
+    }
+    
+    .tfDash{
+      display: flex;
+      flex-direction: column;
+      padding: 30px;
+      color: #fff;
+    }
+    
+    .mainSection{
+      padding: 0px!important;
+      margin: 10px -12px 10px 15px;
+    }
+    .mainstat{
+      display: flex;
+      flex-direction: column!important;
+    }
+    .navWrap{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between; 
+    }
+
+    .itemMenu{
+        padding: 10px 30px 0px 30px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        gap: 10px;
+        justify-content: center;
+      }
+      .mainDashTf .btnTfMain{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        padding: 30px;
+        color: #FFFFFF;
+      
+    }
+
+    .transferTo{
+      margin: 10px -25px;
+    }
+    .btnTransConfirm{
+      text-align: center!important;
+    }
+    footer{
+      display: none;
+    }
+    .fw9BtnChange{
+      margin: 0px!important;
+    }
+    .addPhone{
+      padding: 0!important;
+    }
+    .passChange{
+    margin: 0px;
+    }
+    .cardProfile{
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+      padding: 20px 30px 1px 20px;
+      justify-content: space-between;
+      margin: 0px;
+      background: #6998AB;
+      border-radius: 10px;
+    }
+  }
+    
