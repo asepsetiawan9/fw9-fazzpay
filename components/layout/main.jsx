@@ -1,29 +1,24 @@
-import React, { useEffect } from "react";
-import { useRouter } from "next/router";
+import React from 'react'
+import { Row } from 'react-bootstrap'
+import Header from './header'
+import Menubar from './menubar'
+import Footer from './footer'
 import Head from "next/head";
 
-export default function MainLayout(props) {
-    const router = useRouter();
-    useEffect(() => {
-        checkToken();
-    }, []);
-
-    const checkToken = () => {
-        const token = false;
-        if (!token) {
-            router.push("/auth/login");
-        }
-    };
-
+export default function MainComponent(props) {
     return (
         <>
             <Head>
                 <title>{props.title ? props.title : "FazzPay"}</title>
             </Head>
-            <div>Navbar Component</div>
-            <div>Aside Component</div>
-            <main>{props.children}</main>
-            <div>Footer Component</div>
+            <Header />
+            <section style={{ padding: '20px 150px', backgroundColor: '#1A374D' }} className='mainSection'>
+                <Row className='min-vh-100 mw-100'>
+                    <Menubar />
+                    <main>{props.children}</main>
+                </Row>
+            </section>
+            <Footer />
         </>
-    );
-} 
+    )
+}

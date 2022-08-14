@@ -5,8 +5,8 @@ const nextConfig = {
   async rewrites() {
     return [
       {
-        source: '/register', // mau diganti jadi apa ?
-        destination: '/auth/register', // path lama ?
+        source: '/', // mau diganti jadi apa ?
+        destination: '/dashboard', // path lama ?
       },
       
     ]
@@ -14,8 +14,8 @@ const nextConfig = {
   async redirects() {
     return [
       {
-        source: '/auth/register', // jika ada yang akses ini
-        destination: '/register', // lempar kesini
+        source: '/dashboard', // jika ada yang akses ini
+        destination: '/', // lempar kesini
         permanent: true,
       },
     ]

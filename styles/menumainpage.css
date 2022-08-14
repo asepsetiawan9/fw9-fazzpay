@@ -253,6 +253,45 @@ footer{
   background: #B1D0E0;
   color: #1A374D;
 }
+.btn-Continue a{
+  box-sizing: border-box!important; 
+  background: #1A374D; 
+  border: 2px solid #fff;
+  border-radius: 12px; 
+  font-size: 16px; 
+  padding: 10px 26px; 
+  color: #B1D0E0;
+  text-decoration: unset;
+}
+.btn-Continue a:hover{
+  box-sizing: border-box; 
+  background: #6998AB; 
+  border: 2px solid #1A374D;
+  border-radius: 12px; 
+  font-size: 16px; 
+  padding: 10px 26px; 
+  color: #1A374D;
+  text-decoration: none;
+}
+.btn-Continue button{
+  box-sizing: border-box!important; 
+  background: #1A374D; 
+  border: 2px solid #fff;
+  border-radius: 12px; 
+  font-size: 16px; 
+  padding: 10px 26px; 
+  color: #B1D0E0;
+}
+.btn-Continue button:hover{
+  box-sizing: border-box; 
+  background: #6998AB; 
+  border: 2px solid #1A374D;
+  border-radius: 12px; 
+  font-size: 16px; 
+  padding: 10px 26px; 
+  color: #1A374D;
+  text-decoration: none;
+}
 .regis{
   box-sizing: border-box; 
   background: #1A374D; 
@@ -273,6 +312,19 @@ footer{
   color: #1A374D;
   text-decoration: none;
 }
+.regis a{
+  color: #B1D0E0;
+  text-decoration: none;
+}
+.regis a:hover{
+  color: #1A374D;
+  text-decoration: none;
+}
+/* .seeall a{
+  font-size: '14px'!important;
+  text-decoration: 'none'!important;
+  color: '#1A374D'!important;
+} */
 .login{
   box-sizing: border-box; 
   background: #B1D0E0; 
@@ -378,6 +430,17 @@ footer{
 .react-bs-container-header tr {
   border-bottom-style: hidden !important;
 }
+
+.footerDekstop{
+    color: #1A374D!important;
+    display: flex!important; 
+    justify-content:space-between!important; 
+    padding-top: 30px !important; 
+    background-color: #B1D0E0!important;
+    /* padding-right: 150px!important;
+    padding-left: 150px!important; */
+    border-radius: 15px;
+}
   @media (max-width: 768px) {
     .sideBar{
       display: none;
@@ -440,9 +503,6 @@ footer{
       
     }
 
-    .transferTo{
-      margin: 10px -25px;
-    }
     .btnTransConfirm{
       text-align: center!important;
     }
