@@ -34,7 +34,7 @@ function TransSearch() {
                                 </div>
                             </div>
                             <div className="wrapTrasn">
-                                <Link className='cardSearchTrans' href={"/transinput/"}>
+                                <Link className='cardSearchTrans' href={"/input-tf"}>
                                     <div className="d-flex flex-row gap-4" style={{ padding: '0px 20px' }}>
                                         <Image style={{ width: '50px', height: '50px' }} src={p1} alt="user1" />
                                         <div className="d-flex flex-column">
@@ -44,7 +44,7 @@ function TransSearch() {
                                     </div>
                                 </Link>
 
-                                <Link className='cardSearchTrans' href={"/transinput/"}>
+                                <Link className='cardSearchTrans' href={"/input-tf"}>
                                     <div className="d-flex flex-row gap-4" style={{ padding: '0px 20px' }}>
                                         <Image style={{ width: '50px', height: '50px' }} src={p1} alt="user1" />
                                         <div className="d-flex flex-column">
@@ -54,7 +54,7 @@ function TransSearch() {
                                     </div>
                                 </Link>
 
-                                <Link className='cardSearchTrans' href={"/transinput/"}>
+                                <Link className='cardSearchTrans' href={"/input-tf"}>
                                     <div className="d-flex flex-row gap-4" style={{ padding: '0px 20px' }}>
                                         <Image style={{ width: '50px', height: '50px' }} src={p1} alt="user1" />
                                         <div className="d-flex flex-column">
@@ -64,7 +64,7 @@ function TransSearch() {
                                     </div>
                                 </Link>
 
-                                <Link className='cardSearchTrans' href={"/transinput/"}>
+                                <Link className='cardSearchTrans' href={"/input-tf"}>
                                     <div className="d-flex flex-row gap-4" style={{ padding: '0px 20px' }}>
                                         <Image style={{ width: '50px', height: '50px' }} src={p1} alt="user1" />
                                         <div className="d-flex flex-column">
@@ -74,7 +74,7 @@ function TransSearch() {
                                     </div>
                                 </Link>
 
-                                <Link className='cardSearchTrans' href={"/transinput/"}>
+                                <Link className='cardSearchTrans' href={"/input-tf"}>
                                     <div className="d-flex flex-row gap-4" style={{ padding: '0px 20px' }}>
                                         <Image style={{ width: '50px', height: '50px' }} src={p1} alt="user1" />
                                         <div className="d-flex flex-column">

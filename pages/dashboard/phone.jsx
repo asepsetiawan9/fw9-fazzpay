@@ -35,7 +35,7 @@ function Phone() {
                                         <p style={{ fontSize: '16px', fontWeight: 'bold' }}>+62 813 9387 7946</p>
                                     </div>
                                     <div style={{ padding: '10px 0px' }}>
-                                        <Link href='/phoneadd' ><FiTrash2 style={{ color: '#1A374D' }} size={25} /></Link>
+                                        <Link href='/add-phone' ><FiTrash2 style={{ color: '#1A374D' }} size={25} /></Link>
                                     </div>
                                 </div>
                             </div>

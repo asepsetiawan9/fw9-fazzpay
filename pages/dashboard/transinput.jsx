@@ -25,7 +25,7 @@ const AmountForm = ({ errors, handleSubmit, handleChange }) => {
             <Form noValidate onSubmit={handleSubmit}>
                 <div className="inputAmount">
                     <div>
-                        <Form.Control className="form-control wrap-amount text-center" style={{ borderBottom: 'none', fontSize: '42px', color: '#1A374D', paddingTop: '40px', fontWeight: '900', borderBottom: 'none!important' }} name="amount" onChange={handleChange} type="number" placeholder="0.00" isInvalid={!!errors.amount} />
+                        <Form.Control className="form-control wrap-amount text-center" style={{ borderBottom: 'unset', fontSize: '42px', color: '#1A374D', paddingTop: '40px', fontWeight: '900', borderBottom: 'none!important' }} name="amount" onChange={handleChange} type="number" placeholder="0.00" isInvalid={!!errors.amount} />
                         <Form.Control.Feedback className="wrap-amount text-center" type="invalid">{errors.amount}</Form.Control.Feedback>
 
                     </div>
@@ -42,7 +42,7 @@ const AmountForm = ({ errors, handleSubmit, handleChange }) => {
                 </div>
                 <div style={{ textAlign: 'right', padding: '20px 50px 30px 0px' }}>
                     <div className='btn-Continue'>
-                        <Link href={"/confirm/"}>continue</Link>
+                        <Link href={"/confirm-tf/"}>continue</Link>
                     </div>
                 </div>
             </Form>
@@ -66,12 +66,7 @@ function TransSearch() {
                                 <div>
                                     <p style={{ fontSize: '18px', fontWeight: 'bold' }}>Transfer Money</p>
                                 </div>
-                                <div>
-                                    <input className="form-control form-control-lg" type="text" placeholder="Search" aria-label=".form-control-lg example" style={{
-                                        background: '#6998AB',
-                                        borderRadius: '12px', border: 'unset', color: '#1A374D'
-                                    }} />
-                                </div>
+
                             </div>
                             <div className="wrapTrasn">
                                 <div className='cardSearchTrans'>
@@ -96,12 +91,8 @@ function TransSearch() {
                                 validationSchema={amountSchema}>
                                 {(props) => <AmountForm {...props} />}
                             </Formik>
-
-
                         </div>
-
                     </Col>
-
                 </Row>
 
             </section>

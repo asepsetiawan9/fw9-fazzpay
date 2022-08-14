@@ -121,12 +121,12 @@ function TransConfirm() {
                                 </Modal.Body>
                                 <Modal.Footer style={{ borderTop: 'unset' }}>
                                     <div className='btn-Continue'>
-                                        <Link href={'/transfail'} style={{ padding: '10px 26px', background: 'red' }}  >
+                                        <Link href={'/fail-tf'} style={{ padding: '10px 26px', background: 'red' }}  >
                                             Fail
                                         </Link>
                                     </div>
                                     <div className='btn-Continue'>
-                                        <Link href={'/transsuccess'} style={{ padding: '10px 26px' }} className='btn btn-fw9' >
+                                        <Link href={'/success-tf'} style={{ padding: '10px 26px' }} className='btn btn-fw9' >
                                             Save Changes
                                         </Link>
                                     </div>

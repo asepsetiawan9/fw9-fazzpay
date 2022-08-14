@@ -73,7 +73,7 @@ function TransFail() {
                                 </div>
                                 <div style={{ textAlign: 'right', padding: '20px 50px 30px 0px' }}>
                                     <div className='btn-Continue'>
-                                        <Link href={"/transinput/"}>continue</Link>
+                                        <Link href={"/input-tf"}>continue</Link>
                                     </div>
                                 </div>
                             </div>

@@ -22,11 +22,11 @@ function MenuBar() {
                 <div className="sideBarMenu">
                     <div className="itemMenu">
                         <FiGrid />
-                        <Link style={{ textDecoration: 'none', color: '#3A3D42CC' }} href='/dashboard'>Dashboard</Link>
+                        <Link style={{ textDecoration: 'none', color: '#3A3D42CC' }} href='/home'>Dashboard</Link>
                     </div>
                     <div className="itemMenu">
                         <FiArrowUp />
-                        <Link style={{ textDecoration: 'none', color: '#3A3D42CC' }} href='/transsearch'>Transfer</Link>
+                        <Link style={{ textDecoration: 'none', color: '#3A3D42CC' }} href='/search-tf'>Transfer</Link>
                     </div>
                     <div className="itemMenu">
                         <FiPlus />

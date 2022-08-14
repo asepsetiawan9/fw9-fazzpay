@@ -33,7 +33,7 @@ function Home() {
                                 </div>
 
                                 <div className="btnTfMain" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', gap: '20px', padding: '30px', color: '#FFFFFF' }}>
-                                    <div className='regis'> <FiPlus /> <Link href="/transsearch/">Transfer</Link></div>
+                                    <div className='regis'> <FiPlus /> <Link href="/search-tf/">Transfer</Link></div>
                                     <div className='regis'> <FiArrowUp /><Link href="/topup/"> Top Up</Link></div>
 
                                 </div>
@@ -66,7 +66,7 @@ function Home() {
                                     </div>
 
                                     <div className='seeall'>
-                                        <Link href="/transhistory">See all</Link>
+                                        <Link href="/history">See all</Link>
                                     </div>
                                 </div>
                                 <div className="d-flex flex-row" style={{ justifyContent: 'space-between' }}>

@@ -39,21 +39,21 @@ function Profile() {
                                 </div>
                             </div>
                             <div className='d-flex flex-column gap-3' style={{ marginBottom: '50px' }}>
-                                <Link className="wrapTrasn" href='/personalinfo' style={{ textDecoration: 'none', color: '#1A374D' }}>
+                                <Link className="wrapTrasn" href='/personal-info' style={{ textDecoration: 'none', color: '#1A374D' }}>
                                     <div className='cardProfile'>
                                         <div><p style={{ fontSize: '17px', fontWeight: 'bold' }}>Personal Information</p></div>
                                         <div><FiArrowRight /></div>
                                     </div>
                                 </Link>
 
-                                <Link className="wrapTrasn" href='/passchange' style={{ textDecoration: 'none', color: '#1A374D' }}>
+                                <Link className="wrapTrasn" href='/change-pass' style={{ textDecoration: 'none', color: '#1A374D' }}>
                                     <div className='cardProfile'>
                                         <div><p style={{ fontSize: '17px', fontWeight: 'bold' }}>Change Password</p></div>
                                         <div><FiArrowRight /></div>
                                     </div>
                                 </Link>
 
-                                <Link className="wrapTrasn" href='/pinchange' style={{ textDecoration: 'none', color: '#1A374D' }}>
+                                <Link className="wrapTrasn" href='/change-pin' style={{ textDecoration: 'none', color: '#1A374D' }}>
                                     <div className='cardProfile'>
                                         <div><p style={{ fontSize: '17px', fontWeight: 'bold' }}>Change PIN</p></div>
                                         <div><FiArrowRight /></div>

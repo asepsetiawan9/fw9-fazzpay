@@ -4,9 +4,6 @@ import Header from '../../components/layout/header'
 import Footer from '../../components/layout/footer'
 import { Row, Col } from 'react-bootstrap'
 import Link from 'next/link';
-import Image from 'next/image'
-//photo
-import p1 from '../../public/images/p1.png'
 
 function ProfileInfo() {
     return (
@@ -55,7 +52,7 @@ function ProfileInfo() {
                                         <p style={{ fontSize: '14px', marginTop: '-10px' }}>Phone Number</p>
                                         <p style={{ fontSize: '16px', fontWeight: 'bold' }}>+62 813-9387-7946</p>
                                     </div>
-                                    <div style={{ paddingTop: '10px', textDecoration: 'none', fontSize: '15px' }}><Link href='/phonemanage'> Manage </Link></div>
+                                    <div style={{ paddingTop: '10px', textDecoration: 'none', fontSize: '15px' }}><Link href='/phone'> Manage </Link></div>
                                 </div>
 
                             </div>
