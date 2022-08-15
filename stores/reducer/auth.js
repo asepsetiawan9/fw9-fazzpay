@@ -18,20 +18,20 @@ const auth = createSlice({
     }
   },
   extraReducers: (build) => {
-    build.addCase(login.pending, (state) => {
-      state.errorMsg = null;
-      state.successMsg = null;
-    });
-    build.addCase(login.fulfilled, (state, action) => {
-      const token = action.payload?.token;
-      if (token) {
-        state.token = token;
-        Cookies.set("token", token);
-      } else {
-        state.errorMsg = action.payload?.errorMsg;
-        state.successMsg = action.payload?.successMsg;
-      }
-    });
+    // build.addCase(login.pending, (state) => {
+    //   state.errorMsg = null;
+    //   state.successMsg = null;
+    // });
+    // build.addCase(login.fulfilled, (state, action) => {
+    //   const token = action.payload?.token;
+    //   if (token) {
+    //     state.token = token;
+    //     Cookies.set("token", token);
+    //   } else {
+    //     state.errorMsg = action.payload?.errorMsg;
+    //     state.successMsg = action.payload?.successMsg;
+    //   }
+    // });
 
 
     build.addCase(register.pending, (state) => {
@@ -39,8 +39,8 @@ const auth = createSlice({
       state.successMsg = null;
     });
     build.addCase(register.fulfilled, (state, action) => {
-      state.errorMsg = action.payload?.errorMsg;
-      state.successMsg = action.payload?.successMsg;
+      state.errormsg = action.payload?.errormsg;
+      state.successmsg = action.payload?.successmsg;
     });
 
   }

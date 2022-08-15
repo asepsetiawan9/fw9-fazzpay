@@ -1,4 +1,7 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import axios from '../../helper/axios'
+import Cookies from 'js-cookie';
+import { useRouter } from 'next/router';
 import NavbarDash from '../../components/layout/menubar'
 import Header from '../../components/layout/header'
 import Footer from '../../components/layout/footer'
@@ -17,9 +20,28 @@ const passNewSchema = Yup.object().shape({
         .oneOf([Yup.ref('password'), null], 'Passwords must match')
 })
 
-const PassNewForm = ({ errors, handleSubmit, handleChange }) => {
+const PassNewForm = ({ errors }) => {
+    // const [form, setForm] = useState({ oldPassword: '', newPassword: '', confirmPassword: '' });
+    // const [data, setData] = useState([]);
+
+    // const handleChange = (e) => {
+    //     setForm({ ...form, [e.target.name]: e.target.value });
+    // };
+
+    // const router = useRouter();
+
+    // const handleSubmit = async () => {
+    //     try {
+    //         console.log(form);
+    //         const id = Cookies.get('id');
+    //         const result = await axios.patch(`user/password/${id}`, form);
+    //         console.log(result);
+    //         router.push('/profile');
+    //     } catch (error) {
+    //         console.log(error);
+    //     }
+    // };
     const style = { color: "#1A374D", fontSize: "1.5em" }
-    console.log(errors)
     return (
         <>
             <Form className='d-flex flex-column gap-3' noValidate onSubmit={handleSubmit}>
@@ -109,10 +131,7 @@ function PassChange() {
             </section>
 
             <footer >
-                <div className="d-flex flex-row footerDekstop" style={{ justifyContent: 'space-between' }}>
-                    <div><p>2022 Art-Tos. All right reserved.</p></div>
-                    <div><p>+62 5637 8882 9901 &nbsp;&nbsp;&nbsp;&nbsp;contact@art-Tos.com</p></div>
-                </div>
+                <Footer />
             </footer>
 
         </>

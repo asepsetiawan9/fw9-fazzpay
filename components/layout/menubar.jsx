@@ -1,21 +1,18 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import axios from '../../helper/axios'
+import Cookies from 'js-cookie';
 import { useDispatch } from "react-redux";
 import { Button, Col } from 'react-bootstrap'
 import logout from '../../stores/actions/auth';
 import Link from 'next/link';
+
 
 //icon
 import { FiGrid, FiUser, FiArrowUp, FiPlus, FiLogOut } from "react-icons/fi";
 
 
 function MenuBar() {
-    // const dispatch = useDispatch();
-    // const navigate = useNavigate();
 
-    // const onLogout = () => {
-    //     dispatch(logout());
-    //     navigate("/login");
-    // };
     return (
         <>
             <Col md={3} className='sideBar'>

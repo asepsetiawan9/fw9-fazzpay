@@ -3,6 +3,8 @@ import NavbarDash from '../../components/layout/menubar'
 import Header from '../../components/layout/header'
 import Footer from '../../components/layout/footer'
 import { Row, Col, Form } from 'react-bootstrap'
+import { useRouter } from 'next/router';
+import { useSelector, useDispatch } from 'react-redux';
 import Link from 'next/link';
 import Image from 'next/image'
 import { Formik } from 'formik'
@@ -17,9 +19,47 @@ const amountSchema = Yup.object().shape({
         .max(10000000, 'Max Amount is 10.000.000')
 })
 
-const AmountForm = ({ errors, handleSubmit, handleChange }) => {
+const AmountForm = () => {
+    const [dataRecipient, setDataRecipient] = useState([]);
+    const [dataUser, setDataUser] = useState([]);
+    const recipient = Cookies.get('recipientID');
+    const [form, setForm] = useState({ receiverId: recipient, amount: '', notes: '' });
 
-    console.log(errors)
+    useEffect(() => {
+        getData();
+    }, []);
+
+    const handleChangeText = (e) => {
+        setForm({ ...form, [e.target.name]: e.target.value });
+    };
+
+    const getData = async () => {
+        try {
+            const user = Cookies.get('id');
+            const resultRecipient = await axios.get(`user/profile/${recipient}`);
+            const resultUser = await axios.get(`user/profile/${user}`);
+            setDataRecipient(resultRecipient.data.data);
+            setDataUser(resultUser.data.data);
+            // console.log(result);
+        } catch (error) {
+            console.log(error);
+        }
+    };
+
+    const router = useRouter();
+    const user = useSelector((state) => state.user);
+    const dispatch = useDispatch();
+
+    const handleSubmit = async () => {
+        try {
+            console.log(form);
+            dispatch(transferData(form));
+            // console.log(user.transferData);
+            router.push('/confirmation');
+        } catch (error) {
+            console.log(error);
+        }
+    };
     return (
         <>
             <Form noValidate onSubmit={handleSubmit}>

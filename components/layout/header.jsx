@@ -1,4 +1,6 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import axios from '../../helper/axios'
+import Cookies from 'js-cookie';
 import user from '../../public/images/u3.png'
 import Image from 'next/image'
 import Link from 'next/link';
@@ -12,21 +14,22 @@ import { FiBell, FiGrid, FiLogOut, FiPlus, FiUser, FiArrowDown, FiArrowUp, FiMen
 
 function Header() {
 
-    // const dispatch = useDispatch();
+    const [data, setData] = useState([]);
 
-    // const onLogout = () => {
-    //     dispatch(logout());
-    //     navigate("/login");
-    // };
+    useEffect(() => {
+        getData();
+    }, []);
 
-    // const token = useSelector((state) => state.auth.token)
-    // const profile = useSelector((state) => state.profile.data);
-    // const dataUser = useSelector((state) => state.profile.data);
-
-    // React.useEffect(() => {
-    //     dispatch(getProfile(token))
-    // }, [])
-    // console.log(profile?.result);
+    const getData = async () => {
+        try {
+            const user = Cookies.get('id');
+            const result = await axios.get(`user/profile/${user}`);
+            setData(result.data.data);
+            console.log(result);
+        } catch (error) {
+            console.log(error);
+        }
+    };
 
     return (
         <>
@@ -35,10 +38,11 @@ function Header() {
                     <Link href='/dashboard'>ART-TOS</Link>
                 </div>
                 <div className="navWrap">
-                    <Image style={{ height: '60px' }} src={user} alt="user" />
+                    <Image width={50}
+                        height={50} src={data.image ? `https://res.cloudinary.com/dd1uwz8eu/image/upload/v1659549135/${data.image}` : '/images/user.webp'} alt="p1" className='img-fluid' />
                     <div className="dashUser">
-                        <p className="userDashName">Namaaaa</p>
-                        <p style={{ fontSize: '16px', color: '#406882' }}>+62 8139 3877 7946</p>
+                        <p className="userDashName">{`${data.firstName} ${data.lastName} ` || "Name User"}</p>
+                        <p style={{ fontSize: '16px', color: '#406882' }}>{data.noTelp || "082 ----"}</p>
                     </div>
                     <div>
                         <div>

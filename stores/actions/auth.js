@@ -1,29 +1,29 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import qs from 'qs'
-import http from '../../helper/http';
+import axiosServer from '../../helper/axiosServer';
 
-export const login = createAsyncThunk('profile/login', async(request)=>{
-  const results = {}
-  try{
-    const send = qs.stringify(request)
-    const {data} = await http().post('/auth/login', send)
-    results.token=data.data.token
-    console.log(data);
-    return results
-  }
-  catch(e) {
-    results.errormsg = e.response.data.msg
-    return results
-  }
-})
+// export const login = createAsyncThunk('login', async(request)=>{
+//   const results = {}
+//   try{
+//     const send = qs.stringify(request)
+//     const {data} = await http().post('/auth/login', send)
+//     results.token=data.data.token
+//     console.log(data);
+//     return results
+//   }
+//   catch(e) {
+//     results.errormsg = e.response.data.msg
+//     return results
+//   }
+// })
 
 export const register = createAsyncThunk('profile/register', async(request)=>{
   const results = {}
   try{
     const send = qs.stringify(request)
-    const {data} = await http().post('auth/register',send)
-    results.successmsg = data.massage
+    const {data} = await axiosServer.post('auth/register',send)
     console.log(data);
+    results.successmsg = data.data.id
     return results
   }
   catch(e){
@@ -32,6 +32,7 @@ export const register = createAsyncThunk('profile/register', async(request)=>{
       window.alert(e.msg);
       return e.msg
     })
+    console.log(error);
     results.errormsg = errormsg
     return results
   }

@@ -5,46 +5,59 @@ import { FiMail, FiLock, FiEye, FiUser } from 'react-icons/fi';
 import Link from 'next/link';
 import { Formik } from 'formik';
 import * as Yup from 'yup'
-import Head from 'next/head';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { register } from '../../stores/actions/auth';
 import phonelogin from '../../public/images/phonelogin.png';
-import login from '../../stores/actions/auth';
-import Router from 'next/router';
+import { useRouter } from 'next/router'
 
 
 const signupSchema = Yup.object().shape({
-  username: Yup.string().min(6).required('Required'),
+  firstName: Yup.string().required('Required'),
+  lastName: Yup.string().required('Required'),
   email: Yup.string().email('Invalid email address format').required('Required'),
-  password: Yup.string().min(6).required('Required')
+  password: Yup.string().min(3).required('Required')
 })
 
 const SignUpForm = (props) => {
-  const successMsg = useSelector((state) => state.auth.successMsg);
+  const navigate = useRouter()
+  const success = useSelector((state) => state.auth.successMsg);
   const errorMsg = useSelector((state) => state.auth.errorMsg);
+  // console.log('aaaaaaaaaaaaaaaaaaaaaaaaaaaa');
+  //console.log(errorMsg);
 
-  // React.useEffect(() => {
-  //   if (successMsg) {
-  //     navigate("/login", { state: { successMsg } });
-  //   }
-  // }, [navigate, successMsg]);
+  React.useEffect(() => {
+    if (success) {
+      navigate.push('/login')
+    }
+  }, [success])
 
   const style = { color: "#1A374D", fontSize: "1.5em" }
   return (
     <>
       <Form className='d-flex flex-column gap-3' noValidate onSubmit={props.handleSubmit}>
         {errorMsg && <Alert variant="danger">{errorMsg}</Alert>}
+        {success && <Alert variant="success">{success}</Alert>}
         <Form.Group className="input-group mb-3">
           <div className="input-group-text">
             <FiUser style={style} />
           </div>
-          <Form.Control name="username" onChange={props.handleChange} type="text" placeholder="Enter username" value={props.values.username} isInvalid={!!props.errors.username} />
-          <Form.Control.Feedback type="invalid">{props.errors.email}</Form.Control.Feedback>
+          <Form.Control name="firstName" onChange={props.handleChange} type="text" placeholder="Enter firstName" isInvalid={!!props.errors.firstName} />
+          <Form.Control.Feedback type="invalid">{props.errors.firstName}</Form.Control.Feedback>
         </Form.Group>
+
+        <Form.Group className="input-group mb-3">
+          <div className="input-group-text">
+            <FiUser style={style} />
+          </div>
+          <Form.Control name="lastName" onChange={props.handleChange} type="text" placeholder="Enter lastName" isInvalid={!!props.errors.lastName} />
+          <Form.Control.Feedback type="invalid">{props.errors.lastName}</Form.Control.Feedback>
+        </Form.Group>
+
         <Form.Group className="input-group mb-3">
           <div className="input-group-text">
             <FiMail style={style} />
           </div>
-          <Form.Control name="email" onChange={props.handleChange} type="email" placeholder="Enter email" value={props.values.email} isInvalid={!!props.errors.email} />
+          <Form.Control name="email" onChange={props.handleChange} type="email" placeholder="Enter email" isInvalid={!!props.errors.email} />
           <Form.Control.Feedback type="invalid">{props.errors.email}</Form.Control.Feedback>
         </Form.Group>
 
@@ -52,11 +65,12 @@ const SignUpForm = (props) => {
           <div className="input-group-text">
             <FiLock style={style} />
           </div>
-          <Form.Control name="password" onChange={props.handleChange} type="password" placeholder="Password" value={props.values.password} isInvalid={!!props.errors.password} />
+          <Form.Control name="password" onChange={props.handleChange} type="password" placeholder="Password" isInvalid={!!props.errors.password} />
           <Form.Control.Feedback type="invalid">{props.errors.password}</Form.Control.Feedback>
         </Form.Group>
+
         <div className="d-grid ">
-          <Button className='btn btn-fw9' to={"/createpin/"} type="submit">Sign Up</Button>
+          <Button className='btn btn-fw9' type="submit">Sign Up</Button>
         </div>
         <div className="text-center">
           Already have an account? Lets
@@ -69,20 +83,34 @@ const SignUpForm = (props) => {
 }
 
 function Signup() {
+  const navigate = useRouter()
   const style = { color: "#1A374D", fontSize: "1.5em" }
-  const dispatch = useDispatch();
-  const token = useSelector((state) => state.auth.token);
-
-
-  const onRegister = (value) => {
-    dispatch(register(value));
-  };
-
+  const dispatch = useDispatch()
+  const successmsg = useSelector((state => state.auth.successmsg))
+  const signUpRequest = (val) => {
+    const request = { firstName: val.firstName, lastName: val.lastName, email: val.email, password: val.password }
+    dispatch(register(request));
+  }
   React.useEffect(() => {
-    if (token) {
-      Router.push('/home');
+    if (successmsg) {
+      navigate.push('/login')
     }
-  }, [token]);
+  }, [successmsg])
+
+  // const navigate = useRouter()
+  // const handleSignup = async (value) => {
+  //   try {
+  //     const result = await axios.post('auth/register', value)
+  //     // Cookies.set('token', result.data.data.token)
+  //     // Cookies.set('id', result.data.data.id)
+  //     if (Cookies.get('token') !== null) {
+  //       navigate.push('/home')
+  //     }
+  //   } catch (e) {
+  //     console.log(e.response);
+  //     window.alert(e.response.data.msg)
+  //   }
+  // }
 
   return (
     <>
@@ -121,8 +149,8 @@ function Signup() {
 
             <div className='d-flex flex-column gap-5' >
               <Formik
-                onSubmit={onRegister}
-                initialValues={{ email: '', password: '' }}
+                onSubmit={signUpRequest}
+                initialValues={{ firstname: '', lastname: '', email: '', password: '' }}
                 validationSchema={signupSchema}>
                 {(props) => <SignUpForm {...props} />}
               </Formik>

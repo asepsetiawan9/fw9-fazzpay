@@ -1,23 +1,22 @@
 import React from 'react';
-import { Row, Col, Form, Navbar, Alert, Button } from 'react-bootstrap'
 import Image from 'next/image'
-import { FiMail, FiLock } from 'react-icons/fi';
+import axios from '../../helper/axios'
+import Cookies from 'js-cookie'
 import Link from 'next/link';
 import { Formik } from 'formik';
+import { useRouter } from 'next/router'
+import { FiMail, FiLock } from 'react-icons/fi';
+import { Row, Col, Form, Navbar, Button } from 'react-bootstrap'
 import * as Yup from 'yup'
-import Head from 'next/head';
-import { useDispatch, useSelector } from 'react-redux';
+
 import phonelogin from '../../public/images/phonelogin.png';
-import login from '../../stores/actions/auth';
-import Router from 'next/router';
+
 
 const loginSchema = Yup.object().shape({
     email: Yup.string().email('Invalid email address format').required('Required'),
     password: Yup.string().required('Required')
 })
 const LoginForm = ({ errors, handleSubmit, handleChange }) => {
-    const successMsg = useSelector((state) => state.auth.successMsg);
-    const errorMsg = useSelector((state) => state.auth.errorMsg);
 
     const style = { color: "#1A374D", fontSize: "1.5em" }
     return (
@@ -25,8 +24,6 @@ const LoginForm = ({ errors, handleSubmit, handleChange }) => {
             <Form className='d-flex flex-column gap-2'
                 noValidate
                 onSubmit={handleSubmit}>
-                {successMsg && <Alert variant="success">{successMsg}</Alert>}
-                {errorMsg && <Alert variant="danger">{errorMsg}</Alert>}
 
                 <Form.Group className="input-group mb-3">
                     <div className="input-group-text"><FiMail style={style} /> </div>
@@ -71,24 +68,20 @@ const LoginForm = ({ errors, handleSubmit, handleChange }) => {
 }
 
 const Signin = () => {
-    const dispatch = useDispatch();
-    const token = useSelector((state) => state.auth.token);
-
-    const loginRequest = (val) => {
-        console.log(val);
-        const request = { email: val.email, password: val.password }
-        if (val.email === '' && val.password === '') {
-            window.alert('Write Your Email and Password')
-        } else {
-            dispatch(login(request))
+    const navigate = useRouter()
+    const handleLogin = async (value) => {
+        try {
+            const result = await axios.post('auth/login', value)
+            Cookies.set('token', result.data.data.token)
+            Cookies.set('id', result.data.data.id)
+            if (Cookies.get('token') !== null) {
+                navigate.push('/home')
+            }
+        } catch (e) {
+            console.log(e.response);
+            window.alert(e.response.data.msg)
         }
     }
-
-    React.useEffect(() => {
-        if (token) {
-            Router.push('/home');
-        }
-    }, [token]);
     return (
         <>
             <Row >
@@ -126,7 +119,7 @@ const Signin = () => {
 
                         <div className='d-flex flex-column gap-5' >
                             <Formik
-                                onSubmit={loginRequest}
+                                onSubmit={handleLogin}
                                 initialValues={{ email: '', password: '' }}
                                 validationSchema={loginSchema}
                             >

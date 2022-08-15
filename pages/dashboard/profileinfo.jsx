@@ -1,4 +1,6 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import axios from '../../helper/axios'
+import Cookies from 'js-cookie';
 import NavbarDash from '../../components/layout/menubar'
 import Header from '../../components/layout/header'
 import Footer from '../../components/layout/footer'
@@ -6,6 +8,22 @@ import { Row, Col } from 'react-bootstrap'
 import Link from 'next/link';
 
 function ProfileInfo() {
+    const [data, setData] = useState([]);
+
+    useEffect(() => {
+        getData();
+    }, []);
+
+    const getData = async () => {
+        try {
+            const user = Cookies.get('id');
+            const result = await axios.get(`user/profile/${user}`);
+            setData(result.data.data);
+            console.log(result);
+        } catch (error) {
+            console.log(error);
+        }
+    };
     return (
         <>
             <section className='headerDashboard'>
@@ -30,27 +48,27 @@ function ProfileInfo() {
                                 <div className='cardSearchTrans'>
                                     <div className="d-flex flex-column" style={{ padding: '20px 0px 0px 20px' }}>
                                         <p style={{ fontSize: '14px', marginTop: '-10px' }}>First Name</p>
-                                        <p style={{ fontSize: '16px', fontWeight: 'bold' }}>Robert</p>
+                                        <p style={{ fontSize: '16px', fontWeight: 'bold' }}>{data.firstName}</p>
                                     </div>
                                 </div>
 
                                 <div className='cardSearchTrans'>
                                     <div className="d-flex flex-column" style={{ padding: '20px 0px 0px 20px' }}>
                                         <p style={{ fontSize: '14px', marginTop: '-10px' }}>Last Name</p>
-                                        <p style={{ fontSize: '16px', fontWeight: 'bold' }}>Chandler</p>
+                                        <p style={{ fontSize: '16px', fontWeight: 'bold' }}>{data.lastName}</p>
                                     </div>
                                 </div>
 
                                 <div className='cardSearchTrans'>
                                     <div className="d-flex flex-column" style={{ padding: '20px 0px 0px 20px' }}>
                                         <p style={{ fontSize: '14px', marginTop: '-10px' }}>Verified E-mail</p>
-                                        <p style={{ fontSize: '16px', fontWeight: 'bold' }}>pewdiepie1@gmail.com</p>
+                                        <p style={{ fontSize: '16px', fontWeight: 'bold' }}>{data.email}</p>
                                     </div>
                                 </div>
                                 <div className='cardSearchTrans'>
                                     <div className="d-flex flex-column" style={{ padding: '20px 0px 0px 20px' }}>
                                         <p style={{ fontSize: '14px', marginTop: '-10px' }}>Phone Number</p>
-                                        <p style={{ fontSize: '16px', fontWeight: 'bold' }}>+62 813-9387-7946</p>
+                                        <p style={{ fontSize: '16px', fontWeight: 'bold' }}>{data.noTelp || "082 ----"}</p>
                                     </div>
                                     <div style={{ paddingTop: '10px', textDecoration: 'none', fontSize: '15px' }}><Link href='/phone'> Manage </Link></div>
                                 </div>
